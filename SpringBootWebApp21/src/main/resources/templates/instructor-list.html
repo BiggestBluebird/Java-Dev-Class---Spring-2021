@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Instructor List</title>
+	</head>
+	<body>
+		<h1>Instructor List</h1>
+			<nobr>
+				<a th:href="@{/api/v1/index.html}">Back to Main Landing Page</a>
+				<br></br>
+				<a th:href="@{/api/v1/student.html}">Student Page</a>
+			</nobr>
+		<br></br>
+		<div>
+			<table border="1">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>DOB</th>
+				</tr>
+				<tr th:each="instructor : ${instructors}">
+					<td th:utext="${instructor.id}">...</td>
+					<td th:utext="${instructor.name}">...</td>
+					<td th:utext="${instructor.dob}">...</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>		
